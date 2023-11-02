@@ -7,6 +7,8 @@ C#, .NET framework
 # Project status
 finished
 
+update: A Optimized console version was released with unlimited characters length
+
 # Installation
 git clone https://github.com/flavitoss/PasswordGenerator.git
 
