@@ -8,6 +8,7 @@ C#, .NET framework
 finished
 
 update: A Optimized console version was released with unlimited characters length
+
 update 2: A validation system was added on the console version
 
 # Installation
