@@ -12,9 +12,21 @@
             passwordLenght = Convert.ToInt32(Console.ReadLine());
 
             upper = lower = number = special = true;
-
+            var generate = PasswordGenerate.GeneratePassword(upper, lower, number, special, passwordLenght);
             Console.WriteLine("Here's your password:");
-            Console.WriteLine(PasswordGenerate.GeneratePassword(upper, lower, number, special, passwordLenght));
+            Console.WriteLine(generate);
+
+            //validate password
+            if(generate.Length < 12) 
+            {
+                Console.WriteLine("invalid password! your password must have at least 12 characters, 1 upper, 1 number and 1 special character");
+            } 
+
+            if(upper = lower = number = special = false) 
+            {
+                Console.WriteLine("invalid password! your password must have at least 12 characters, 1 upper, 1 number and 1 special character");
+            }
+
         }
     }
     public static class PasswordGenerate 
@@ -42,6 +54,31 @@
             for(int i  = 0; i < passwordSize; i++) 
             {
                 password[i] = charSet[random.Next(charSet.Length - 1)];
+            }
+
+            foreach(char u in Upper) 
+            {
+                if (!charSet.Contains(Upper)) 
+                {
+                    Console.WriteLine("invalid password! your password must have at least 12 characters, 1 upper, 1 number and 1 special character");
+                    break;
+                }
+            }
+
+            foreach(char n in Numbers) 
+            {
+                if (!charSet.Contains(Numbers))
+                {
+                    Console.WriteLine("invalid password! your password must have at least 12 characters, 1 upper, 1 number and 1 special character");
+                }
+            }
+
+            foreach(char s in specialChars) 
+            {
+                if (!charSet.Contains(specialChars)) 
+                {
+                    Console.WriteLine("invalid password! your password must have at least 12 characters, 1 upper, 1 number and 1 special character");
+                }
             }
 
             return string.Join(null, password);
